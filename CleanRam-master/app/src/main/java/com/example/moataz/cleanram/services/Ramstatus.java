@@ -83,20 +83,20 @@ public class Ramstatus extends Service {
         if(!isCleaning) {
             setup();
 
-            booster.setScanListener(new ScanListener() {
-                @Override
-                public void onStarted() {
-                }
-
-                @Override
-                public void onFinished(long availableRam, long totalRam, List<ProcessInfo> appsToClean) {
-
-                    val.setAvilable(availableRam);
-                    val.setTotal(totalRam);
-                    booster.startClean();
-
-                }
-            });
+//            booster.setScanListener(new ScanListener() {
+//                @Override
+//                public void onStarted() {
+//                }
+//
+//                @Override
+//                public void onFinished(long availableRam, long totalRam, List<ProcessInfo> appsToClean) {
+//
+//                    val.setAvilable(availableRam);
+//                    val.setTotal(totalRam);
+//                    booster.startClean();
+//
+//                }
+//            });
             booster.setCleanListener(new CleanListener() {
                 @Override
                 public void onStarted() {
@@ -104,7 +104,7 @@ public class Ramstatus extends Service {
                 }
 
                 @Override
-                public void onFinished(long availableRam,long totalRam) {
+                public void onFinished(long availableRam, long totalRam) {
                     isCleaning = false;
                     val.setAvilable(availableRam);
                     val.setTotal(totalRam);
@@ -113,7 +113,8 @@ public class Ramstatus extends Service {
                 }
             });
 
-            booster.startScan(true);
+            //booster.startScan(true);
+            booster.startClean();
 
             updateWidgitWithStatus();
         }
