@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fullcompliance_layout"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/layout_bg"
+    >
+<ImageView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:src="@mipmap/micon"
+    android:visibility="invisible"
+    android:id="@+id/img"/>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:indeterminate="false"
+        android:max="100"
+        android:progress="100"
+        android:id="@+id/btn_backProgress"
+        android:progressDrawable="@drawable/circle_progress_background" />
+
+    <ProgressBar
+        android:id="@+id/btn_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:max="100"
+        android:rotation="-90"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/green"
+        />
+
+    <ProgressBar
+        android:id="@+id/btng_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:max="100"
+        android:rotation="-90"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/green"
+        android:visibility="invisible"/>
+    <ProgressBar
+        android:id="@+id/btny_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:max="100"
+        android:rotation="-90"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/yellow"
+        android:visibility="invisible"/>
+    <ProgressBar
+        android:id="@+id/btnr_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:max="100"
+        android:rotation="-90"
+        android:indeterminate="false"
+        android:progressDrawable="@drawable/red"
+        android:visibility="invisible"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:gravity="center">
+
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/btn_compliance_percentage"
+                android:layout_width="42dp"
+                android:layout_height="42dp"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/percent_value"
+                android:textStyle="bold"
+                android:textColor="@color/start"
+                android:background="@drawable/back"
+
+                />
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</RelativeLayout>

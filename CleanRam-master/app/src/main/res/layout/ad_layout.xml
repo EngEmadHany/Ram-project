@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D9000000"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:paddingTop="90sp"
+    android:paddingLeft="0dp"
+    android:paddingRight="0dp"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:background="@color/white"
+        android:paddingRight="20dp"
+        android:paddingEnd="20dp"
+        android:paddingStart="0dp"
+        android:paddingLeft="0dp"
+        android:gravity="center"
+        >
+
+        <ImageView
+            android:paddingTop="10dp"
+            android:contentDescription="@string/accept"
+            android:paddingBottom="7sp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_width="87dp"
+            android:layout_height="match_parent"
+            android:id="@+id/imageView"
+            android:src="@mipmap/icon"
+
+
+            />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/baner_gehazk"
+                android:id="@+id/textView3"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                android:paddingLeft="10sp"
+                android:paddingStart="10sp"
+                android:paddingEnd="0sp"
+                android:paddingRight="0sp"
+                android:layout_marginEnd="0sp"
+                android:layout_marginRight="0sp"
+                android:layout_marginLeft="10sp"
+                android:layout_marginStart="10dp"
+                android:gravity=""
+                android:layout_weight="1"/>
+                <!--android:gravity="end" />-->
+
+
+
+    </LinearLayout>
+    <com.google.android.gms.ads.AdView
+
+        android:layout_marginTop="10dp"
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_home_footer"
+       >
+    </com.google.android.gms.ads.AdView>
+</LinearLayout>

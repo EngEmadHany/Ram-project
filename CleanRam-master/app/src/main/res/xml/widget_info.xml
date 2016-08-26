@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialLayout="@layout/calc"
+    android:minHeight="40dp"
+    android:minWidth="40dp"
+    android:updatePeriodMillis="300000"
+    android:previewImage="@mipmap/micon"
+    android:configure="com.example.moataz.cleanram.activities.WidgConfig"
+    >
+
+</appwidget-provider>

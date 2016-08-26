@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">طلقة</string>
+    <string name="app_name2"> </string>
+    <string name="action_settings">Settings</string>
+
+    <string name="curved_text_value">In/Out Facility</string>
+    <string name="home_screen_observations">OBSERVATIONS</string>
+    <string name="total_observations">2375</string>
+    <string name="percent_value">0%</string>
+    <string name="home_screen_observed_compliance">OBSERVED\nCOMPLIANCE</string>
+    <string name="content_description">This is an image…</string>
+
+    <string name="banner_home_footer">ca-app-pub-6420811930867487/3574037253</string>
+    <string name="baner_tam_tanzeef">تم تنظيف</string>
+    <string name="baner_gehazk">جهازك يعمل جيدا</string>
+    <string name="interstitial_full_screen">ca-app-pub-6420811930867487/3574037253</string>
+
+
+    <string name="title_activity_welcome">Home Screen</string>
+    <string name="next">NEXT</string>
+    <string name="skip">SKIP</string>
+    <string name="start">GOT IT</string>
+
+
+    <string name="slide_1_title">الأكثر أمانا</string>
+    <string name="slide_1_desc">لن يطلب منك التطبيق التسجيل او اي بيانات شخصية ولن يحصل منك علي صلاحيات للدخول الي جهازك</string>
+
+    <string name="slide_2_title">الأقل أزعاجا</string>
+    <string name="slide_2_desc">علي عكس الكثير من التطبيقات المزعجة. لن تجد اي اعلانات مزعجةو فهدفنا هو راحتك </string>
+
+    <string name="slide_3_title">الأسهل أستخداما</string>
+    <string name="slide_3_desc">أكثر ما يميز التطبيق هو  سهولتة في الأستخدام.نقرة واحدة تجعل جهازك افضل وأسرع!</string>
+
+    <string name="slide_4_title">أخيرا</string>
+    <string name="slide_4_desc">لا تنسي ان تضع الويدجت الخاص بالتطبيق علي صفحة الهوم الخاصة بك</string>
+
+    <string name="play_again_desc">To see the welcome slider again, goto Settings -> apps -> welcome slider -> clear data</string>
+    <string name="play_again">Play Again</string>
+    <string name="info_about">صُمم تطبيق طلقة بأحدث التقنيات ليقوم بتنظيف وتسريع هاتفك , ولكن بدون المسس بأي من بياناتك او محتويات الهاتف , فعندما يقوم التطبيق بتسريع وتنظيف الهاتف فانه يقوم باغلاق كافة البرامج التي تعمل دون علمك , ولكن لا تقلق فهو لن يحذف او يمس اي شئ على هاتفك</string>
+    <string name="about_company">Powerd by koktil</string>
+</resources>

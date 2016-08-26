@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#10FFFFFF</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="white">#ecf0f1</color>
+    <color name="light_gray">#ABBAC2</color>
+    <color name="text_gray">#6B767D</color>
+    <color name="coral_blue">#1DAEFA</color>
+    <color name="dark_blue">#125D9D</color>
+    <color name="black">#ff000000</color>
+    <color name="start">#2ecc71</color>
+    <color name="center">#e67e22</color>
+    <color name="end">#e74c3c</color>
+    <color name="baner_green">#66CC99</color>
+    <color name="baner_blue">#44BBFF</color>
+    <color name="baner_red">#FC575E</color>
+    <color name="blue_mid">#3498DB</color>
+    <color name="splash_color">#696969</color>
+
+    <color name="circleProgressCompleteStartGradient">@color/dark_blue</color>
+    <color name="circleProgressCompleteEndGradient">@color/coral_blue</color>
+    <color name="circleProgressIncompleteStartGradient">@color/light_gray</color>
+    <color name="circleProgressIncompleteEndGradient">@color/light_gray</color>
+
+
+    <!-- Screens background color-->
+    <color name="bg_screen1">#696969</color>
+    <color name="bg_screen2">#696969</color>
+    <color name="bg_screen3">#696969</color>
+    <color name="bg_screen4">#696969</color>
+
+    <!-- dots inactive colors -->
+    <color name="dot_dark_screen1">#d1395c</color>
+    <color name="dot_dark_screen2">#14a895</color>
+    <color name="dot_dark_screen3">#2278d4</color>
+    <color name="dot_dark_screen4">#a854d4</color>
+
+    <!-- dots active colors -->
+    <color name="dot_light_screen1">#f98da5</color>
+    <color name="dot_light_screen2">#8cf9eb</color>
+    <color name="dot_light_screen3">#93c6fd</color>
+    <color name="dot_light_screen4">#e4b5fc</color>
+
+    <array name="array_dot_active">
+        <item>@color/dot_light_screen1</item>
+        <item>@color/dot_light_screen2</item>
+        <item>@color/dot_light_screen3</item>
+        <item>@color/dot_light_screen4</item>
+    </array>
+
+    <array name="array_dot_inactive">
+        <item>@color/dot_dark_screen1</item>
+        <item>@color/dot_dark_screen2</item>
+        <item>@color/dot_dark_screen3</item>
+        <item>@color/dot_dark_screen4</item>
+    </array>
+</resources>
