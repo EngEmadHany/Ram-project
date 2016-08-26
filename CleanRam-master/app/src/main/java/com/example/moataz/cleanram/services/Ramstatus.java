@@ -100,8 +100,7 @@ public class Ramstatus extends Service {
             booster.setCleanListener(new CleanListener() {
                 @Override
                 public void onStarted() {
-                    updateWidgitWithStatus();
-
+                    showLoadingIcon();
                 }
 
                 @Override
@@ -240,4 +239,50 @@ public class Ramstatus extends Service {
 
         super.onTaskRemoved(rootIntent);
     }
+
+
+
+    public void showLoadingIcon(){
+
+
+
+
+        if(WidgConfig.remoteViews!= null){
+            remoteViews = WidgConfig.remoteViews;
+            remoteViews.setViewVisibility(R.id.btn_backProgress, View.INVISIBLE);
+            remoteViews.setViewVisibility(R.id.btn_compliance_percentage,View.INVISIBLE);
+            remoteViews.setViewVisibility(R.id.btng_progress_bar, View.INVISIBLE);
+            remoteViews.setViewVisibility(R.id.btny_progress_bar,View.INVISIBLE);
+            remoteViews.setViewVisibility(R.id.btnr_progress_bar,View.INVISIBLE);
+
+            remoteViews.setViewVisibility(R.id.img, View.VISIBLE);
+
+            appWidgetManager.updateAppWidget(thisWidget, remoteViews);
+
+
+            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+
+            ComponentName thisAppWidget = new ComponentName(context.getPackageName(), MyWidgetProvider.class.getName());
+            int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_compliance_percentage);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_progress_bar);
+
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btng_progress_bar);
+
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btny_progress_bar);
+
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btnr_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.img);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_backProgress);
+        } else {
+
+        }
+
+
+
+    }
+
+
+
+
 }
