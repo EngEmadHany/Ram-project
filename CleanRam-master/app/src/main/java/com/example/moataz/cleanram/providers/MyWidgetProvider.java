@@ -20,60 +20,63 @@ public class MyWidgetProvider extends AppWidgetProvider {
 
     private static final String ACTION_CLICK = "ACTION_CLICK";
     BoosterService boosterService = new BoosterService();
-//    LoadService loadService = new LoadService();
+    //    LoadService loadService = new LoadService();
     int color = Ramstatus.viewColor;
-   RemoteViews remoteViews = WidgConfig.remoteViews;
+    RemoteViews remoteViews = WidgConfig.remoteViews;
+
     @Override
     public void onReceive(final Context context, Intent intent) {
 
 
+        final Context incontext = context;
+        if (intent.getAction().equals(ACTION_CLICK)) {
+
+            Intent my_intent = new Intent(context, Ramstatus.class);
+            context.startService(my_intent);
+            Log.i("Autostart", "started");
+            final Context inContext = context;
 
 
-final Context incontext = context;
-if(intent.getAction().equals(ACTION_CLICK)) {
+            new Thread() {
 
-    Intent my_intent = new Intent(context, Ramstatus.class);
-    context.startService(my_intent);
-    Log.i("Autostart", "started");
-final Context inContext = context;
-
-
-    new Thread() {
-
-        public void run() {
+                public void run() {
 
 //            context.startService(new Intent(context,LoadService.class));
 
-            boosterService.run();
+                    //boosterService.run();
+                    Intent intent = new Intent(context, Ramstatus.class);
+
+                    intent.setAction(Ramstatus.CLEAN_RAM_ACTION);
+
+                    context.startService(intent);
+
+                }
+            }.start();
 
 
         }
-    }.start();
 
+        if (intent.getAction().equals(
+                AppWidgetManager.ACTION_APPWIDGET_UPDATE)) {
 
-}
+            AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
 
-    if (intent.getAction().equals(
-            AppWidgetManager.ACTION_APPWIDGET_UPDATE)) {
+            ComponentName thisAppWidget = new ComponentName(context.getPackageName(), MyWidgetProvider.class.getName());
+            int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btn_compliance_percentage);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btn_progress_bar);
 
-        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btng_progress_bar);
 
-        ComponentName thisAppWidget = new ComponentName(context.getPackageName(), MyWidgetProvider.class.getName());
-        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(thisAppWidget);
-        appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_compliance_percentage);
-    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btny_progress_bar);
 
-    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btng_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btnr_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.img);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btn_backProgress);
 
-    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btny_progress_bar);
+            Log.d("finally", "done");
 
-    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btnr_progress_bar);
-    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.img);
-    appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_backProgress);
-
-    Log.d("finally"  ,"done");
-
-    }
+        }
 
         super.onReceive(context, intent);
     }
@@ -86,7 +89,6 @@ final Context inContext = context;
                 MyWidgetProvider.class);
         int[] allWidgetIds = appWidgetManager.getAppWidgetIds(thisWidget);
         for (int widgetId : allWidgetIds) {
-
 
 
             Intent intent = new Intent(context, MyWidgetProvider.class);
@@ -105,23 +107,21 @@ final Context inContext = context;
 
             appWidgetManager.updateAppWidget(thisWidget, remoteViews);
 
-            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_compliance_percentage);
-            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btn_compliance_percentage);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btn_progress_bar);
 
-            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btng_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btng_progress_bar);
 
-            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btny_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btny_progress_bar);
 
-            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btnr_progress_bar);
-            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.img);
-            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds,  R.id.btn_backProgress);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btnr_progress_bar);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.img);
+            appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btn_backProgress);
 
         }
 
 
     }
-
-
 
 
 }
