@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fullcompliance_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/layout_bg"
     >
-<ImageView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:src="@mipmap/micon"
-    android:visibility="invisible"
-    android:id="@+id/img"/>
+
+
+        <!--<ImageView-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@mipmap/micon"-->
+        <!--/>-->
+
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:indeterminate="true"
+            android:visibility="invisible"
+            android:id="@+id/img"
+
+            />
+
 
     <ProgressBar
+        android:id="@+id/btn_backProgress"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,8 +33,7 @@
         android:indeterminate="false"
         android:max="100"
         android:progress="100"
-        android:id="@+id/btn_backProgress"
-        android:progressDrawable="@drawable/circle_progress_background" />
+        android:progressDrawable="@drawable/circle_progress_background"/>
 
     <ProgressBar
         android:id="@+id/btn_progress_bar"
@@ -30,10 +41,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:max="100"
-        android:rotation="-90"
         android:indeterminate="false"
+        android:max="100"
         android:progressDrawable="@drawable/green"
+        android:rotation="-90"
         />
 
     <ProgressBar
@@ -42,42 +53,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:max="100"
-        android:rotation="-90"
         android:indeterminate="false"
+        android:max="100"
         android:progressDrawable="@drawable/green"
+        android:rotation="-90"
         android:visibility="invisible"/>
+
     <ProgressBar
         android:id="@+id/btny_progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:max="100"
-        android:rotation="-90"
         android:indeterminate="false"
+        android:max="100"
         android:progressDrawable="@drawable/yellow"
+        android:rotation="-90"
         android:visibility="invisible"/>
+
     <ProgressBar
         android:id="@+id/btnr_progress_bar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:max="100"
-        android:rotation="-90"
         android:indeterminate="false"
+        android:max="100"
         android:progressDrawable="@drawable/red"
+        android:rotation="-90"
         android:visibility="invisible"/>
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:orientation="vertical"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
 
         <RelativeLayout
@@ -88,26 +100,20 @@
                 android:id="@+id/btn_compliance_percentage"
                 android:layout_width="42dp"
                 android:layout_height="42dp"
-                android:gravity="center"
-                android:textSize="20sp"
-                android:text="@string/percent_value"
-                android:textStyle="bold"
-                android:textColor="@color/start"
                 android:background="@drawable/back"
+                android:gravity="center"
+                android:text="@string/percent_value"
+                android:textColor="@color/start"
+                android:textSize="20sp"
+                android:textStyle="bold"
 
                 />
-
 
 
         </RelativeLayout>
 
 
-
-
-
     </LinearLayout>
-
-
 
 
 </RelativeLayout>

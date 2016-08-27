@@ -29,7 +29,8 @@ public class MyWidgetProvider extends AppWidgetProvider {
         final Context incontext = context;
 
         if(AppWidgetManager.ACTION_APPWIDGET_DELETED.equals(intent.getAction())){
-
+            Intent sintent = new Intent(context, Ramstatus.class);
+            context.startService(sintent);
         }else
 
         if (intent.getAction().equals(ACTION_CLICK)) {
@@ -66,7 +67,8 @@ public class MyWidgetProvider extends AppWidgetProvider {
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetIds, R.id.btn_backProgress);
 
             Log.d("finally", "done");
-
+            Intent sintent = new Intent(context, Ramstatus.class);
+            context.startService(sintent);
         }
 
         super.onReceive(context, intent);
