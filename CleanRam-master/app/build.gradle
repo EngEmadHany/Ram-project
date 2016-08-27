@@ -25,11 +25,13 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    //    compile 'com.github.kerolos-sss:rambooster:1.0.3@aar'
+    //    compile 'com.ram.speed.booster'
+    compile project(':rambooster')
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
-    compile 'com.github.obolsh:rambooster:1.0.2@aar'
     compile 'com.github.cardinalnow:android-circleprogressindicator:v0.2'
     compile 'com.google.android.gms:play-services-ads:9.4.0'
     compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.17'

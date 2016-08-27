@@ -26,32 +26,23 @@ public class MyWidgetProvider extends AppWidgetProvider {
 
     @Override
     public void onReceive(final Context context, Intent intent) {
-
-
         final Context incontext = context;
+
+        if(AppWidgetManager.ACTION_APPWIDGET_DELETED.equals(intent.getAction())){
+
+        }else
+
         if (intent.getAction().equals(ACTION_CLICK)) {
-
-            Intent my_intent = new Intent(context, Ramstatus.class);
-            context.startService(my_intent);
             Log.i("Autostart", "started");
-            final Context inContext = context;
 
 
-            new Thread() {
 
-                public void run() {
 
-//            context.startService(new Intent(context,LoadService.class));
+                    Intent sintent = new Intent(context, Ramstatus.class);
 
-                    //boosterService.run();
-                    Intent intent = new Intent(context, Ramstatus.class);
+                    sintent.setAction(Ramstatus.CLEAN_RAM_ACTION);
 
-                    intent.setAction(Ramstatus.CLEAN_RAM_ACTION);
-
-                    context.startService(intent);
-
-                }
-            }.start();
+                    context.startService(sintent);
 
 
         }
