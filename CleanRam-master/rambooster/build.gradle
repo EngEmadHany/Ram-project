@@ -1,0 +1,81 @@
+apply plugin: 'com.android.library'
+apply plugin: 'maven'
+//apply plugin: 'signing'
+// This is the library version used when deploying the artifact
+version = "1.0.3"
+group = "com.github.kerolos-sss"
+android {
+    compileSdkVersion 24
+    buildToolsVersion '24.0.1'
+    defaultConfig {
+        minSdkVersion 8
+        targetSdkVersion 21
+        versionCode 1
+        versionName "1.0.2"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+
+}
+dependencies {
+}
+//configurations {
+//    archives {
+//        extendsFrom configurations.default
+//    }
+//}
+//signing {
+//    required { has("release") && gradle.taskGraph.hasTask("uploadArchives") }
+//    sign configurations.archives
+//}
+//uploadArchives {
+//    configuration = configurations.archives
+//    repositories.mavenDeployer {
+//        beforeDeployment { MavenDeployment deployment -> signing.signPom(deployment) }
+//
+////        repository(url: sonatypeRepo) {
+////            authentication(userName: sonatypeUsername,   password: sonatypePassword)
+////        }
+////        snapshotRepository(url: snapshotRepo) {
+////            authentication(userName: sonatypeUsername, password: sonatypePassword)
+////        }
+////        pom.project {
+////            packaging 'aar'
+////            name 'RAM Booster Library'
+////            description = 'The project aims to provide a searching running processes and then finishing them.'
+////            url 'https://github.com/kerolos-sss/RAMBooster'
+////
+////            scm {
+////                url 'scm:git@github.com:kerolos-sss/RAMBooster.git'
+////                connection 'scm:git@github.com:kerolos-sss/RAMBooster.git'
+////                developerConnection 'scm:git@github.com:kerolos-sss/RAMBooster.git'
+////            }
+////
+////            licenses {
+////                license {
+////                    name 'The Apache License, Version 2.0'
+////                    url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+////                }
+////            }
+////
+////            developers {
+////                developer {
+////                    id 'kerolos-sss'
+////                    name 'Kerolos Bisheer'
+////                    email 'kerolos.sss@gmail.com'
+////                }
+////            }
+////        }
+//    }
+//}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
